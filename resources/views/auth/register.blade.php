@@ -1,5 +1,10 @@
 ```php
 <x-guest-layout>
+    @if (session('status'))
+    <div class="mb-4 text-sm text-green-600">
+        {{ session('status') }}
+    </div>
+@endif
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
